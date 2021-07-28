@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/style.css">
+		<http-equiv="Cotent-Script-Type" content=text/javascript>
+		<script type="text/javascript">
+		
+			var vi = ["008678", "055D78", "0F218B", "281285", "56007D", "AF0065", "EE0026", "FE4118", "FF7F00", "FFE600", "99CF15", "33A23D"];
+			var b = ["1AA18E", "1D86AE", "386CB0", "6964AD", "A45AAA", "DF4C94", "F9344C", "FC4E32", "FF9914", "FFF231", "99D02B", "33A65E"];
+			var lt = ["66C2AE", "67B2CA", "679FCA", "807DBA", "B172B6", "E170A4", "FA7482", "FB8072", "FDB46C", "FFF27B", "B3DE69", "7FC97E"];
+			var p = ["B3E2D8", "B3D7DD", "B3CDE3", "B2B6D8", "CAB2D6", "E3ADD5", "FBB4C4", "FDCDB7", "FEE6AA", "FFFFB3", "E6F5B0", "CCEBC5"];
+			var sf = ["4E9B86", "4F8B97", "516690", "5D5791", "8c5588", "B15076", "C95F6A", "D77856", "D89048", "CCBA48", "B3B140", "66AC78"];
+			var ltg = ["91B8AC", "91AFBB", "91A4B6", "9191AD", "A997B0", "C09EB3", "D7A4B6", "D8AFA7", "D9BA97", "D9C69B", "AAC09B", "9EBCA3"];
+			var g = ["385B63", "384E5D", "384158", "3F2F50", "493753", "5A3A54", "7D4F5B", "7D5F61", "7D6764", "7D6F59", "636E5B", "486C5C"];
+			var d = ["2A6B68", "1E6282", "214274", "3A367B", "5E3179", "802A68", "994152", "B24443", "B25938", "997F42", "747E47", "5A804B"];
+			var dp = ["025965", "04436D", "073E73", "232166", "531460", "740050", "9E002C", "A41200", "A34A02", "A38204", "518517", "2F6F41"];
+			var dk = ["1D4B44", "0E4251", "16344F", "312C4B", "4A304B", "633142", "632A31", "743526", "6C4919", "695B18", "56561A", "345934"];
+			var dkg = ["253532", "283539", "222831", "282430", "2E2A31", "3A2D31", "3A2C2E", "3A2C2A", "463B34", "46402C", "3E3F31", "24342D"];
+			/*var glay = ["", "", "", "", "", "", "", "", "", "", "", ""];*/
+				//色相環、出現のメソッド
+			//var setColor = document.getElementsByClassName('ll');
+			var num = -1;
+				function clApp(tone) {
+				var elems = document.getElementsByClassName('item');
+				var increase = Math.PI * 2 / elems.length;
+				var x = 0;
+				var y = 0;
+				var angle = 0;
+				
+				for (var i = 0; i < elems.length; i++) {
+					var elem = elems[i];
+					
+					x = 200 * Math.cos(angle) + 700;
+					y = 200 * Math.sin(angle) + 315;
+					elem.style.position = 'absolute';
+					elem.style.left = x + 'px';
+					elem.style.top = y + 'px';
+					elem.style.backgroundColor = "#999";
+					angle += increase;
+				}
+					for(var i = 0; i < 12; i++){
+					elems[i].style.backgroundColor = "#" + tone[i];
+					elems[i].data = tone[i];
+					elems[i].onclick = function() {
+					num++;
+						var setColor = document.getElementsByClassName('output1');
+						var outputcolor = document.getElementsByClassName('ll');
+						//setColor.style.display = "flex";
+						outputcolor[num].style.width = "100px";
+						outputcolor[num].style.height = "100px";
+						outputcolor[num].style.border = "solid 1px '#' + this.data";
+						outputcolor[num].style.backgroundColor = '#' + this.data;
+						//etColor.appendChild(outputcolor);
+				}
+			}
+			};
+			/*function tt() {
+				if(num == 6) {
+					console.log('成功');
+				} else {
+					num++;
+				}
+			}*/
+		
+			</script>
+</head>
+<body>
+	<div class="wapper">
+			<div class="header"><h1>Color Sheme</h1></div>
+		<h2>カラートーン</h2>
+		<div class="color-sheme">
+		<div class="glay">
+		<img src="images/glay.jpg">
+				</div>
+		<div class="color1">
+		<img src="images/p.jpg">
+		<img src="images/ltg.jpg">
+		<img src="images/g.jpg">
+		<img src="images/dkg.jpg">
+				</div>
+		<div class="color2">
+		<img src="images/lt.jpg">
+		<img src="images/sf.jpg">
+		<img src="images/d.jpg">
+		<img src="images/dk.jpg">
+					</div>
+		<div class="color3">
+		<img src="images/b.jpg">
+		<img src="images/dp.jpg">
+				</div>
+				<div class="color4">
+					<img src="images/vi.jpg">
+					</div>
+			</div>
+		<h2 id="image">配色のイメージ</h2>
+			<div id="tone-image1">
+				<div class="color-tone1" onclick="clApp(vi);">vi</div>
+				<div class="color-tone1" onclick="clApp(b);">b</div>
+				<div class="color-tone1" onclick="clApp(lt);">lt</div>
+				<div class="color-tone1" onclick="clApp(p);">p</div>
+				<div class="color-tone1" onclick="clApp(sf);">sf</div>
+				<div class="color-tone1" onclick="clApp(ltg);">ltg</div>
+				</div>
+			<div id="tone-image2">
+				<div class="color-tone2" onclick="clApp(d);">d</div>
+				<div class="color-tone2" onclick="clApp(g);">g</div>
+				<div class="color-tone2" onclick="clApp(dp);">dp</div>
+				<div class="color-tone2" onclick="clApp(dk);">dk</div>
+				<div class="color-tone2" onclick="clApp(dkg);">dkg</div>
+				<div class="color-tone2" onclick="clApp(glay);">glay</div>
+			</div>
+			
+		<section class="main-contents">
+			<section class="circle-box">
+				<div class="item"></div>
+				<div class="item"></div>
+				<div class="item"></div>
+				<div class="item"></div>
+				<div class="item"></div>
+				<div class="item"></div>
+				<div class="item"></div>
+				<div class="item"></div>
+				<div class="item"></div>
+				<div class="item"></div>
+				<div class="item"></div>
+				<div class="item"></div>
+				</section>
+			</section>
+			<div class="output1">
+				<div class="ll"></div>
+				<div class="ll"></div>
+				<div class="ll"></div>
+				</div>
+			<div class="output1">
+				<div class="ll"></div>
+				<div class="ll"></div>
+				<div class="ll"></div>
+				</div>
+			<div class="output1">
+				<div class="ll"></div>
+				<div class="ll"></div>
+				<div class="ll"></div>
+					</div>
+			<div class="footer"></div>
+	</div>
+</body>
+	<script type="text/javascript">
+				
+			//色調べのサブウィドウを開く関数
+		function cWindow() {
+			window.open("cAccess.html", "subwin", "width=900,height=500")
+		}
+		
+
+		</script>
+</html>
